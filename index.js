@@ -3,7 +3,7 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const jwt = require("jsonwebtoken")
 const User = require("./models/user.model")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 require("dotenv").config();
 
 
@@ -289,6 +289,6 @@ app.use('*',  (req, res) => {
 
 
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log("server started on port 3000")
 })
